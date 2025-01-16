@@ -5,6 +5,13 @@ from torch_geometric.datasets import ZINC
 from torch_geometric.loader import DataLoader
 from torch_geometric.transforms import Compose
 from torch_geometric.seed import seed_everything
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.abspath(os.path.join(current_dir, ".."))
+sys.path.append(root_dir)
+
 from edge_transformer import (
     EdgeTransformer,
     token_index_transform,
